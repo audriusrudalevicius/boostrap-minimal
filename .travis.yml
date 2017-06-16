@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 language: node_js
 
 cache:
@@ -13,23 +13,8 @@ notifications:
   email:
     on_failure: change
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-beta
-
 node_js:
   - '7.7'
-
-before_install:
-  - google-chrome-beta --headless --no-sandbox
-
-before_script:
-  - npm prune
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
 
 install:
   - npm install
