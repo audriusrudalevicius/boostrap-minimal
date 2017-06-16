@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/d3trax/boostrap-minimal.svg?branch=master)](https://travis-ci.org/d3trax/boostrap-minimal)
+
+[![CircleCI](https://circleci.com/gh/d3trax/boostrap-minimal.svg?style=svg)](https://circleci.com/gh/d3trax/boostrap-minimal)
+
 Requirements
 ---
 * NPM Version 4.1.2
