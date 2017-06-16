@@ -8,14 +8,16 @@
     "start": "webpack-dev-server --port 9000 --inline --progress --profile --colors --watch --content-base src/",
     "build": "webpack --config webpack.config.js",
     "build:prod": "webpack --config webpack.config.js -p",
-    "test": "npm run test:coverage",
+    "test": "npm run test:karma",
     "test:karma": "karma start karma.config.js",
     "test:mocha": "mocha --compilers ts:ts-node/register test/ --recursive",
-    "test:coverage": "nyc npm run test:mocha"
+    "test:mocha.ci": "mocha --compilers ts:ts-node/register test/ --recursive --reporter mocha-junit-reporter",
+    "test:coverage": "nyc npm run test:mocha.ci"
   },
   "author": "d3trax",
   "license": "MIT",
   "dependencies": {
+    "mocha-junit-reporter": "^1.13.0",
     "typescript": "^2.3.4",
     "webpack": "^2.6.1"
   },
@@ -60,6 +62,7 @@
     "source-map-support": "^0.4.15",
     "ts-node": "^3.0.6",
     "tslint": "^5.4.3",
+    "tslint-junit-formatter": "^5.0.0",
     "tslint-loader": "^3.5.3",
     "webpack-dev-server": "^2.4.5"
   }
